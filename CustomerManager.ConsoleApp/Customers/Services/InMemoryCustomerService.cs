@@ -11,7 +11,6 @@ public class InMemoryCustomerService : ICustomerService
     {
         var customer = CreateCustomer(name, email);
 
-
         _customerList.Add(customer);
 
         return customer;
