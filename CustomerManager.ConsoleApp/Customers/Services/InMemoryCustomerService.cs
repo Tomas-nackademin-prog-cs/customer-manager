@@ -9,9 +9,8 @@ public class InMemoryCustomerService : ICustomerService
     
     public Customer AddCustomer(string name, string email)
     {
-        var customerId = Guid.NewGuid();
+        var customer = CreateCustomer(name, email);
 
-        var customer = new Customer(customerId, name, email);
 
         _customerList.Add(customer);
 
