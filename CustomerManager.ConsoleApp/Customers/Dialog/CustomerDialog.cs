@@ -24,7 +24,15 @@ public class CustomerDialog(ICustomerService customerService) : ICustomerDialog
 
     public void ShowAllCustomers()
     {
-        throw new NotImplementedException();
+        Console.Clear();
+        Console.WriteLine("### CUSTOMER LIST ###");
+
+        var customers = customerService.GetAllCustomers();
+        foreach (var customer in customers)
+        {
+            Console.WriteLine($"{customer.Name} <{customer.Email}>");
+        }
+        Console.ReadKey();
     }
     private static void InputDialog(string text, out string value)
     {
