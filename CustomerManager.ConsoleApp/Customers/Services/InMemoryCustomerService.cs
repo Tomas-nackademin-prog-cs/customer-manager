@@ -6,7 +6,7 @@ public class InMemoryCustomerService : ICustomerService
 {
     private readonly List<Customer> _customerList = [];
 
-    private static Customer CreateCustomer(string name, string email) => new(Guid.NewGuid(), name.Trim(), email.ToLower());
+    
     public Customer AddCustomer(string name, string email)
     {
         var customerId = Guid.NewGuid();
@@ -24,4 +24,5 @@ public class InMemoryCustomerService : ICustomerService
             .OrderBy(customer => customer.Name)
             .ToList();
     }
+    private static Customer CreateCustomer(string name, string email) => new(Guid.NewGuid(), name.Trim(), email.ToLower());
 }
